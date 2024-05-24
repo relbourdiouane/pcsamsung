@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="registro.css">
+    <link rel="stylesheet" href="registro.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="img/pngegg.png"/>
+</head>
+<body>
+
+    <div class="container">
+        <div class="form-content">
+            <h1 id="title">Registro</h1>
+            <form>
+                <div class="input-group">
+                    <div class="input-field" id="nameInput">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Nombre">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="Correo">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Contraseña">
+                    </div>
+                    <p>Olividaste tu contraseña <a href="ridouankhissi@gmail.com"> click aqui</a></p>
+                </div>
+                <div class="btn-field">
+                    <button id="signUp" type="button">Registro</button>
+                    <button id="signIn" type="button" class="disable">login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: #D0D0D0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-content{
+    width: 100%;
+    max-width: 450px;
+    background-color: #003960;
+    padding: 50px 60px 70px;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.form-content h1{
+    font-size: 30px;
+    margin-bottom: 60px;
+    color: #FFFFFF;
+    position: relative;
+}
+
+.form-content h1::after{
+    content: '';
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background: #04aabd;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.input-field{
+    background-color: #515966;
+    margin: 15px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+
+input{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: none;
+    padding: 18px 15px;
+    color: #FFFFFF;
+}
+.input::placeholder{
+    color: #FFFFFF;
+}
+.input-field i{
+    margin-left: 15px;
+    color: #04aabd;
+}
+
+form p{
+    color: #FFFFFF;
+    text-align: left;
+    font-size: 13px;
+}
+form p a{
+    color: #04aabd;
+    margin-left: 5px;
+}
+.btn-field{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.btn-field button{
+    flex-basis: 48%;
+    font-size: 16px;
+    background-color: #04aabd;
+    color: #FFFFFF;
+    height: 40px;
+    border-radius: 10px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 1s;
+}
+
+.input-group{
+    height: 250px;
+}
+.btn-field button.disable{
+    background-color: #FFFFFF;
+    color: #2C2F35;
+}
+</style>
+<java>
+  let signUp = document.getElementById("signUp");
+  let signIn = document.getElementById("signIn");
+  let nameInput = document.getElementById("nameInput");
+  let title = document.getElementById("title");
+
+signIn.onclick = function() {
+    nameInput.style.maxHeight = "0";
+    title.innerHTML = "Login";
+    signUp.classList.add("disable");
+    signIn.classList.remove("disable");
+}
+
+signUp.onclick = function() {
+    nameInput.style.maxHeight = "60px";
+    title.innerHTML = "Registro";
+    signUp.classList.remove("disable");
+    signIn.classList.add("disable");
+}
+<script>
+    let signUp = document.getElementById("signUp");
+    let signIn = document.getElementById("signIn");
+    let nameInput = document.getElementById("nameInput");
+    let title = document.getElementById("title");
+    
+    signIn.onclick = function() {
+        nameInput.style.maxHeight = "0";
+        title.innerHTML = "Login";
+        signUp.classList.add("disable");
+        signIn.classList.remove("disable");
+    }
+    
+    signUp.onclick = function() {
+        nameInput.style.maxHeight = "60px";
+        title.innerHTML = "Registro";
+        signUp.classList.remove("disable");
+        signIn.classList.add("disable");
+    }
+</script>
